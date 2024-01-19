@@ -1,11 +1,22 @@
 import Navbar from "./components/Navbar";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Home from "./components/Home";
+import Skills from "./components/Skills";
+import Work from "./components/Work";
 import "./App.css";
 
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
-    </div>
+      <Navbar />
+      <Home />
+      <About />
+      <Skills />
+      <Work />
+      <Contact />
+    </>
   );
 }
 
