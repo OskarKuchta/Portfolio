@@ -10,5 +10,8 @@
     @apply px-4;
     @apply cursor-pointer;
   }
+  a, button {
+    @apply cursor-pointer
+  }
 }
 

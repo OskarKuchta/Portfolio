@@ -8,7 +8,7 @@ import "./App.css";
 
 const App = () => {
   return (
-    <>
+    <main className="bg-[#0a192f]">
       <Navbar />
       <Navbar />
       <Home />
@@ -16,7 +16,7 @@ const App = () => {
       <Skills />
       <Work />
       <Contact />
-    </>
+    </main>
   );
 };
 

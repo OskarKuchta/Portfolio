@@ -4,11 +4,11 @@ import { Link } from "react-scroll";
 import { ContainerVars, MenuVars, MobileLinkVars, NavLink } from "../Types";
 import { FaBars, FaTimes } from "react-icons/fa";
 const navLinks: NavLink[] = [
-  { title: "Home", href: "/#home" },
-  { title: "About", href: "/#about" },
-  { title: "Skills", href: "/#skills" },
-  { title: "Works", href: "/#works" },
-  { title: "Contact", href: "/#contact" },
+  { title: "Home", href: "home" },
+  { title: "About", href: "about" },
+  { title: "Skills", href: "skills" },
+  { title: "Projects", href: "projects" },
+  { title: "Contact", href: "contact" },
 ];
 const mobileLinkVars: MobileLinkVars = {
   initial: {
@@ -84,12 +84,12 @@ const MobileNavbar: FC = () => {
   };
 
   return (
-    <header className="w-full z-10 md:hidden">
-      <nav className="flex justify-between items-center px-6 bg-[#0a192f] text-gray-300">
+    <div className="w-full z-10 md:hidden">
+      <div className="flex justify-between items-center px-6 bg-[#0a192f] text-gray-300">
         <div className="absolute right-8" onClick={toggleMenu}>
           <FaBars />
         </div>
-      </nav>
+      </div>
       <AnimatePresence>
         {open && (
           <motion.div
@@ -138,7 +138,7 @@ const MobileNavbar: FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </div>
   );
 };
 
