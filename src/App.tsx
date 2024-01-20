@@ -6,7 +6,7 @@ import Skills from "./components/Skills";
 import Work from "./components/Work";
 import "./App.css";
 
-function App() {
+const App = () => {
   return (
     <>
       <Navbar />
@@ -18,6 +18,6 @@ function App() {
       <Contact />
     </>
   );
-}
+};
 
 export default App;
