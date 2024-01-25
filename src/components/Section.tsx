@@ -1,5 +1,3 @@
-// Section.tsx
-
 import { useEffect } from "react";
 import { motion, useAnimation, AnimationControls } from "framer-motion";
 import { useInView } from "react-intersection-observer";

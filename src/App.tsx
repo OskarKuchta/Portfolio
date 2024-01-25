@@ -12,7 +12,7 @@ import "./App.css";
 const App: React.FC = () => {
   return (
     <SectionProvider>
-      <main className="bg-[#0a192f]">
+      <main className="bg-[#0a192f] pb-16">
         <Navbar />
         <Section Component={Home} name="Home" />
         <Section Component={About} name="About" />
