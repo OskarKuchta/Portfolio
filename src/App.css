@@ -10,8 +10,20 @@
     @apply px-4;
     @apply cursor-pointer;
   }
-  a, button {
-    @apply cursor-pointer
+  a,
+  button {
+    @apply cursor-pointer;
   }
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+::-webkit-scrollbar-track {
+  background-color: whitesmoke;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #46e258;
 }
 

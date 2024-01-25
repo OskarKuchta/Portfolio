@@ -1,7 +1,10 @@
-import { Link } from "react-scroll";
+import { Button } from "react-scroll";
 import MobileNavbar from "./MobileNavbar";
 
 const Navbar = () => {
+  const buttonClassName =
+    "mx-2 px-4 py-1 hover:bg-pink-600 focus:bg-pink-600 focus:border-pink-600 focus:outline-white duration-300 rounded-sm";
+
   return (
     <nav className="fixed w-screen h-[72px] flex items-center px-4 bg-[#0a192f] text-gray-300">
       <div className="w-screen flex items-center justify-between">
@@ -10,29 +13,54 @@ const Navbar = () => {
       </div>
       <ul className="hidden md:flex">
         <li>
-          <Link to="home" smooth={true} duration={500}>
+          <Button
+            to="home"
+            className={buttonClassName}
+            smooth={true}
+            duration={1000}
+          >
             Home
-          </Link>
+          </Button>
         </li>
         <li>
-          <Link to="about" smooth={true} duration={500}>
+          <Button
+            to="about"
+            className={buttonClassName}
+            smooth={true}
+            duration={1000}
+          >
             About
-          </Link>
+          </Button>
         </li>
         <li>
-          <Link to="skills" smooth={true} duration={500}>
+          <Button
+            to="skills"
+            className={buttonClassName}
+            smooth={true}
+            duration={1000}
+          >
             Skills
-          </Link>
+          </Button>
         </li>
         <li>
-          <Link to="projects" smooth={true} duration={500}>
+          <Button
+            to="projects"
+            className={buttonClassName}
+            smooth={true}
+            duration={1000}
+          >
             Projects
-          </Link>
+          </Button>
         </li>
         <li>
-          <Link to="contact" smooth={true} duration={500}>
+          <Button
+            to="contact"
+            className={buttonClassName}
+            smooth={true}
+            duration={1000}
+          >
             Contact
-          </Link>
+          </Button>
         </li>
       </ul>
     </nav>

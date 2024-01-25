@@ -1,5 +1,5 @@
 import { HiArrowNarrowRight } from "react-icons/hi";
-import { Link } from "react-scroll";
+import { Button } from "react-scroll";
 import { TypeAnimation } from "react-type-animation";
 
 const Home = () => {
@@ -35,15 +35,15 @@ const Home = () => {
           experiences. Currently, I’m focused on building responsive front-end
           web applications main in React.
         </p>
-        <Link
+        <Button
           to="projects"
           duration={1000}
           smooth={true}
-          className="text-white border-2 px-6 py-3 my-2 flex w-[180px] hover:bg-pink-600 hover:border-pink-600 duration-300"
+          className="text-white border-2 px-6 py-3 my-2 flex w-[180px] hover:bg-pink-600 hover:border-pink-600 focus:bg-pink-600 focus:border-pink-600 focus:outline-white duration-300"
         >
           View Projects
           <HiArrowNarrowRight className="ml-3 " />
-        </Link>
+        </Button>
       </div>
     </div>
   );

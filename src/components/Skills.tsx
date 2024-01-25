@@ -11,8 +11,9 @@ import Sass from "/sass.png";
 import Typescript from "/ts.png";
 import Redux from "/redux.png";
 import Router from "/router.png";
+import { SkillsData } from "../Types";
 
-const skillsData = [
+const skillsData: SkillsData[] = [
   { img: HTML, label: "HTML" },
   { img: CSS, label: "CSS" },
   { img: Sass, label: "SASS" },

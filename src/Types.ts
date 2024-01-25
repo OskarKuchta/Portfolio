@@ -64,3 +64,8 @@ export type ContainerVars = {
         };
     };
 };
+
+export interface SkillsData {
+    img: string;
+    label: string;
+}
