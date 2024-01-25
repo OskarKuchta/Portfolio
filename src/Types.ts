@@ -1,3 +1,5 @@
+import { AnimationControls } from "framer-motion";
+
 export interface Data {
     id: number;
     name: string;
@@ -68,4 +70,15 @@ export type ContainerVars = {
 export interface SkillsData {
     img: string;
     label: string;
+}
+
+export interface SectionProps {
+    Component: React.FC;
+    name: string;
+}
+
+export interface SectionAnimationResult {
+    ref: (node: Element | null | undefined) => void;
+    controls: AnimationControls;
+    inView: boolean;
 }

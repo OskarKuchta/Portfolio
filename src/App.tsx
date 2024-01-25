@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, AnimationControls } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
@@ -8,11 +8,15 @@ import Home from "./components/Home";
 import Skills from "./components/Skills";
 import Work from "./components/Work";
 import "./App.css";
+import { SectionAnimationResult, SectionProps } from "./Types";
 
-const useSectionAnimation = () => {
-  const controls = useAnimation();
+
+
+const useSectionAnimation = (): SectionAnimationResult => {
+  const controls: AnimationControls = useAnimation();
   const [ref, inView] = useInView({
-    triggerOnce: true,
+    threshold: 0.5,
+    delay: 0.2,
   });
 
   useEffect(() => {
@@ -23,11 +27,33 @@ const useSectionAnimation = () => {
     }
   }, [controls, inView]);
 
-  return { ref, controls };
+  return { ref, controls, inView };
 };
 
-const App = () => {
-  const sections = [
+const Section: React.FC<SectionProps> = ({ Component, name }) => {
+  const { ref, controls, inView } = useSectionAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      console.log(`${name} is in view!`);
+    }
+  }, [inView, name]);
+
+  return (
+    <motion.div
+      key={name}
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={controls}
+      transition={{ duration: 0.5 }}
+    >
+      <Component />
+    </motion.div>
+  );
+};
+
+const App: React.FC = () => {
+  const sections: SectionProps[] = [
     { Component: Home, name: "Home" },
     { Component: About, name: "About" },
     { Component: Skills, name: "Skills" },
@@ -38,21 +64,9 @@ const App = () => {
   return (
     <main className="bg-[#0a192f]">
       <Navbar />
-      {sections.map(({ Component, name }, index) => {
-        const { ref, controls } = useSectionAnimation();
-
-        return (
-          <motion.div
-            key={name}
-            ref={ref}
-            initial={{ opacity: 0, y: 50 }}
-            animate={controls}
-            transition={{ duration: 0.5 }}
-          >
-            <Component />
-          </motion.div>
-        );
-      })}
+      {sections.map(({ Component, name }) => (
+        <Section key={name} Component={Component} name={name} />
+      ))}
     </main>
   );
 };
