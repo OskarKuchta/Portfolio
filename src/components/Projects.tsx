@@ -1,6 +1,6 @@
 
 
-const Work = () => {
+const Projects = () => {
   return (
     <div className="w-full md:h-screen text-gray-300" id="projects">
       <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full pt-24 md:pt-0">
@@ -15,4 +15,4 @@ const Work = () => {
   );
 };
 
-export default Work;
+export default Projects;

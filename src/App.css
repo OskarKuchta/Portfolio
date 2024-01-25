@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
   body {
     @apply font-[Raleway];
+   
   }
   li {
     @apply px-4;
@@ -26,4 +30,3 @@
 ::-webkit-scrollbar-thumb {
   background-color: #46e258;
 }
-

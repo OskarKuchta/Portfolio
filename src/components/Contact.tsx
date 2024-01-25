@@ -1,7 +1,7 @@
 const Contact = () => {
   return (
     <div
-      className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center items-center w-full h-full pt-48 md:pt-0"
+      className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center items-center w-full h-full pt-48 md:pt-0 pb-12"
       id="contact"
     >
       <form

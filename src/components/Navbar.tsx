@@ -1,9 +1,11 @@
 import { Button } from "react-scroll";
 import MobileNavbar from "./MobileNavbar";
+import { useSectionContext } from "../Hooks/useSectionContext";
 
 const Navbar = () => {
   const buttonClassName =
-    "mx-2 px-4 py-1 hover:bg-pink-600 focus:bg-pink-600 focus:border-pink-600 focus:outline-white duration-300 rounded-sm";
+    "mx-2 px-4 py-1 hover:bg-pink-600 hover:text-gray-300 focus:bg-pink-600 focus:text-gray-300 focus:border-pink-600 focus:outline-white duration-300 rounded-sm";
+  const { currentSection } = useSectionContext();
 
   return (
     <nav className="fixed w-screen h-[72px] flex items-center px-4 bg-[#0a192f] text-gray-300">
@@ -15,9 +17,13 @@ const Navbar = () => {
         <li>
           <Button
             to="home"
-            className={buttonClassName}
+            className={`${
+              currentSection === "Home"
+                ? `${buttonClassName} text-[#46E258]`
+                : buttonClassName
+            }`}
             smooth={true}
-            duration={1000}
+            duration={300}
           >
             Home
           </Button>
@@ -25,9 +31,13 @@ const Navbar = () => {
         <li>
           <Button
             to="about"
-            className={buttonClassName}
+            className={`${
+              currentSection === "About"
+                ? `${buttonClassName} text-[#46E258]`
+                : buttonClassName
+            }`}
             smooth={true}
-            duration={1000}
+            duration={300}
           >
             About
           </Button>
@@ -35,9 +45,13 @@ const Navbar = () => {
         <li>
           <Button
             to="skills"
-            className={buttonClassName}
+            className={`${
+              currentSection === "Skills"
+                ? `${buttonClassName} text-[#46E258]`
+                : buttonClassName
+            }`}
             smooth={true}
-            duration={1000}
+            duration={300}
           >
             Skills
           </Button>
@@ -45,9 +59,13 @@ const Navbar = () => {
         <li>
           <Button
             to="projects"
-            className={buttonClassName}
+            className={`${
+              currentSection === "Projects"
+                ? `${buttonClassName} text-[#46E258]`
+                : buttonClassName
+            }`}
             smooth={true}
-            duration={1000}
+            duration={300}
           >
             Projects
           </Button>
@@ -55,9 +73,13 @@ const Navbar = () => {
         <li>
           <Button
             to="contact"
-            className={buttonClassName}
+            className={`${
+              currentSection === "Contact"
+                ? `${buttonClassName} text-[#46E258]`
+                : buttonClassName
+            }`}
             smooth={true}
-            duration={1000}
+            duration={300}
           >
             Contact
           </Button>
