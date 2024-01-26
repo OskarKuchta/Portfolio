@@ -1,28 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import gsap from "gsap";
-import { useCallback, useEffect, useRef } from "react";
 
 const Loader = () => {
   const [loadingComplete, setLoadingComplete] = useState(false);
 
-  const load = gsap.timeline({
-    paused: true,
-    onComplete: () => setLoadingComplete(true),
-  });
-
-  load.to("#percent , #bar", {
-    duration: 0.2,
-    opacity: 0,
-    zIndex: -1,
-  });
-  load.to(".progress", {
-    duration: 0.8,
-    width: "0%",
-  });
-
-  const idRef = useRef<number | null>(null);
   const barConfirmRef = useRef<HTMLDivElement>(null);
   const percentRef = useRef<HTMLDivElement>(null);
+  const idRef = useRef<number | null>(null);
+
+  const load = useMemo(() => {
+    return gsap.timeline({
+      paused: true,
+      onComplete: () => setLoadingComplete(true),
+    });
+  }, []);
 
   let width = 1;
 
@@ -41,23 +32,29 @@ const Loader = () => {
         }
       }
     }
-  }, [width, load]);
+  }, [load, width]);
 
   useEffect(() => {
+    load.to(".loader #bar", {
+      duration: 0.1,
+      opacity: 0,
+      zIndex: -1,
+    });
+   
+
     loading();
 
     return () => {
       clearInterval(idRef.current!);
     };
-  }, [loading, load]);
+  }, [load, loading]);
 
-  useEffect(() => {
-    if (!loadingComplete) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-  }, [loadingComplete]);
+  if (!loadingComplete) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
+
   return (
     <>
       {!loadingComplete && (

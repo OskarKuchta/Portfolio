@@ -7,7 +7,7 @@ const Home = () => {
   const { currentSection } = useSectionContext();
   const [isVisible, setIsVisible] = useState<boolean>(false);
   useEffect(() => {
-    const delay: number = 3500;
+    const delay: number = 3000;
 
     const timeoutId: React.ReactNode = setTimeout(() => {
       setIsVisible(true);
@@ -51,7 +51,7 @@ const Home = () => {
         </p>
         <a
           href="#projects"
-          className="text-white border-2 px-6 py-3 my-2 flex w-[180px] hover:bg-pink-600 hover:border-pink-600 focus:bg-pink-600 focus:border-pink-600 focus:outline-white duration-300"
+          className="text-white border-2 px-6 py-3 my-2 flex w-[180px] hover:bg-[#46E258] hover:border-[#46E258] focus:bg-[#46E258] focus:border-[#46E258] focus:outline-white duration-300 rounded-sm"
         >
           View Projects
           <HiArrowNarrowRight className="ml-3 " />

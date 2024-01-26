@@ -8,7 +8,7 @@ import Home from "./components/Home";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import "./App.css";
-import Loader from "./loader";
+import Loader from "./components/loader";
 
 const App: React.FC = () => {
   return (
