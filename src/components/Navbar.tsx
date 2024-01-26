@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <nav className="fixed w-screen h-[72px] flex items-center px-4 bg-[#0a192f] text-gray-300 z-20">
       <div className="w-screen flex items-center justify-between">
-        <h2 className="font-grape-nuts text-2xl w-40">Kuchta Oskar</h2>
+        <h2 className="font-grape-nuts text-2xl w-60">Kuchta Oskar</h2>
         <MobileNavbar />
       </div>
       <ul className="hidden md:flex">

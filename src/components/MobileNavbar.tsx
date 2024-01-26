@@ -1,8 +1,8 @@
 import { FC, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Link } from "react-scroll";
 import { ContainerVars, MenuVars, MobileLinkVars, NavLink } from "../Types";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { useSectionContext } from "../Hooks/useSectionContext";
 const navLinks: NavLink[] = [
   { title: "Home", href: "home" },
   { title: "About", href: "about" },
@@ -10,6 +10,7 @@ const navLinks: NavLink[] = [
   { title: "Projects", href: "projects" },
   { title: "Contact", href: "contact" },
 ];
+
 const mobileLinkVars: MobileLinkVars = {
   initial: {
     y: "30vh",
@@ -22,23 +23,29 @@ const mobileLinkVars: MobileLinkVars = {
     y: 0,
     transition: {
       ease: [0, 0.55, 0.45, 1],
-      duration: 0.7,
+      duration: 1,
     },
   },
 };
 const NavLink: FC<NavLink> = ({ title, href, onClick }) => {
+  const { currentSection } = useSectionContext();
+  const isActive: boolean = currentSection.toLowerCase() === href;
   return (
     <motion.div
       variants={mobileLinkVars}
-      className="text-4xl uppercase text-white text-center py-4"
+      className={`text-4xl uppercase text-white text-center py-4 ${
+        isActive ? "text-[#46E258]" : ""
+      }`}
     >
-      <Link
-        to={href}
-        className="hover:text-mainColor focus:text-mainColor active:text-mainColor"
+      <a
+        href={"#" + href}
+        className={`hover:text-mainColor focus:text-mainColor active:text-mainColor ${
+          isActive ? "text-[#46E258]" : ""
+        }`}
         onClick={onClick}
       >
         {title}
-      </Link>
+      </a>
     </motion.div>
   );
 };
@@ -84,7 +91,7 @@ const MobileNavbar: FC = () => {
   };
 
   return (
-    <div className="w-full z-10 md:hidden">
+    <div className="w-full z-20 md:hidden">
       <div className="flex justify-between items-center px-6 bg-[#0a192f] text-gray-300">
         <div className="absolute right-8" onClick={toggleMenu}>
           <FaBars />
