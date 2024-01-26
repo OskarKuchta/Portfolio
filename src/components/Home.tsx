@@ -1,9 +1,20 @@
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { TypeAnimation } from "react-type-animation";
 import { useSectionContext } from "../Hooks/useSectionContext";
+import { useEffect, useState } from "react";
 
 const Home = () => {
   const { currentSection } = useSectionContext();
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  useEffect(() => {
+    const delay: number = 3500;
+
+    const timeoutId: React.ReactNode = setTimeout(() => {
+      setIsVisible(true);
+    }, delay);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
   return (
     <div className="w-full pt-40" id="home">
       <div className="max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full">
@@ -13,7 +24,7 @@ const Home = () => {
         </h1>
         <h2 className="text-3xl sm:text-6xl font-bold text-[#8892b0]">
           I'm a &lt;
-          {currentSection === "Home" ? (
+          {currentSection === "Home" && isVisible ? (
             <TypeAnimation
               sequence={[
                 "Frontend Developer",
@@ -22,11 +33,11 @@ const Home = () => {
                 1500,
                 "Fan of playing chess",
                 1500,
-                "Guy who you need at work",
+                "Guy who you need in work",
                 1500,
               ]}
               cursor={false}
-              speed={30}
+              speed={15}
               className="text-3xl sm:text-6xl font-bold text-[#46E258]"
             />
           ) : null}

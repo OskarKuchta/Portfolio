@@ -8,11 +8,13 @@ import Home from "./components/Home";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import "./App.css";
+import Loader from "./loader";
 
 const App: React.FC = () => {
   return (
     <SectionProvider>
       <main className="bg-[#0a192f] pb-16">
+        <Loader />
         <Navbar />
         <Section Component={Home} name="Home" />
         <Section Component={About} name="About" />
