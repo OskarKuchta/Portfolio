@@ -9,7 +9,7 @@ import { SectionAnimationResult, SectionProps } from "../Types";
 const useSectionAnimation = (): SectionAnimationResult => {
   const controls: AnimationControls = useAnimation();
   const [ref, inView] = useInView({
-    threshold: 0.5,
+    threshold: 0.3,
     delay: 0.3,
   });
 
