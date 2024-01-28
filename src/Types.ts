@@ -82,3 +82,11 @@ export interface SectionAnimationResult {
     controls: AnimationControls;
     inView: boolean;
 }
+
+export interface ProjectCardProps {
+    name: string;
+    src: string;
+    alt: string;
+    liveHref: string;
+    githubHref: string;
+}

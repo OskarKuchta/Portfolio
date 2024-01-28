@@ -5,6 +5,9 @@
 @layer base {
   html {
     @apply scroll-smooth;
+    @apply m-0;
+    @apply p-0;
+    @apply box-border;
   }
   body {
     @apply font-[Raleway];
@@ -28,4 +31,10 @@
 
 ::-webkit-scrollbar-thumb {
   background-color: #46e258;
+}
+
+.projects-button-container:hover .projects-icon,
+.projects-button-container:focus .projects-icon {
+  fill: black;
+  
 }

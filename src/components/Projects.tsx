@@ -1,43 +1,81 @@
-const ProjectCard = (props: { name: string; src: string; alt: string }) => {
-  const { name, src, alt } = props;
+import { FaGithub } from "react-icons/fa";
+import { FaDisplay } from "react-icons/fa6";
+import { ProjectCardProps } from "../Types";
 
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  name,
+  src,
+  alt,
+  liveHref,
+  githubHref,
+}) => {
   return (
-    <div className="w-full h-80  p-10 flex flex-col items-center border border-gray-300 rounded bg-[#102341]">
-      <h2>{name}</h2>
-      <img src={src} alt={alt} className="mt-4 h-32" />
-      <div className="mt-6">
-        <button className="text-sm mr-2">Live site</button>
-        <button className="text-sm">GitHub code</button>
+    <div className="w-full h-80  p-8 flex flex-col items-center border border-gray-300 rounded bg-[#102341]">
+      <h2 className="text-2xl">{name}</h2>
+      <div className="mt-4 max-h-28 overflow-hidden">
+        <img
+          src={src}
+          alt={alt}
+          className="h-full w-full duration-500 hover:scale-125"
+        />
+      </div>
+      <div className="pt-8 flex justify-center items-center ml-2">
+        <a
+          href={liveHref}
+          className="projects-button-container flex flex-col text-sm justify-center items-center mr-12 hover:border-2 hover:border-white focus:border-2 focus:border-white outline-none py-[6px] px-2 hover:rounded focus:rounded"
+          target="blank"
+        >
+          <FaDisplay size={40} className="projects-icon" />
+          <p className="mt-1 text-center">Live site</p>
+        </a>
+        <a
+          href={githubHref}
+          className="projects-button-container flex flex-col text-sm justify-center p-[6px] items-center hover:border-2 hover:border-white focus:border-2 focus:border-white outline-none hover:rounded focus:rounded"
+          target="blank"
+        >
+          <FaGithub size={40} className="projects-icon" />
+          <p className="mt-1 text-center">Github code</p>
+        </a>
       </div>
     </div>
   );
 };
 
-const projects = [
+const projects: ProjectCardProps[] = [
   {
     name: "Phone Paradise",
     src: "https://raw.githubusercontent.com/OskarKuchta/PhoneParadise/main/public/result1.webp",
     alt: "Phone Paradise project photo",
+    liveHref: "https://phoneparadise.netlify.app/",
+    githubHref: "https://github.com/OskarKuchta/PhoneParadise",
   },
   {
     name: "Dobry Klan",
     src: "https://github.com/OskarKuchta/DobryKlanCoc/blob/main/public/result1.png?raw=true",
     alt: "Dobry Klan project photo",
+    liveHref: "https://dobry-klan.netlify.app/",
+    githubHref: "https://github.com/OskarKuchta/DobryKlanCoc",
   },
   {
     name: "Projekt Rower",
     src: "https://github.com/OskarKuchta/ProjectRower/blob/main/public/home-background.jpg?raw=true",
     alt: "Projekt Rower project photo",
+    liveHref: "https://projektrower.netlify.app/",
+    githubHref: "https://github.com/OskarKuchta/ProjectRower",
   },
   {
     name: "Country Informator",
     src: "https://github.com/OskarKuchta/Country-Infromator/blob/main/app/public/result1.png?raw=true",
     alt: "Country Informator project photo",
+    liveHref: "https://oskaprojects.ct8.pl/Country-Informator/dist/",
+    githubHref: "https://github.com/OskarKuchta/Country-Infromator",
   },
   {
     name: "React Quiz",
     src: "https://github.com/OskarKuchta/React-Quiz/blob/main/app/public/result2.png?raw=true",
     alt: "React Quiz project photo",
+    liveHref: "https://oskaprojects.ct8.pl/React-Quiz/dist/",
+    githubHref: "https://github.com/OskarKuchta/React-Quiz",
   },
 ];
 
