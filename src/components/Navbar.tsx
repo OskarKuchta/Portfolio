@@ -12,7 +12,7 @@ const Navbar = () => {
         <h2 className="font-grape-nuts text-2xl w-60">Kuchta Oskar</h2>
         <MobileNavbar />
       </div>
-      <ul className="hidden md:flex">
+      <ul className="hidden md:flex ">
         <li>
           <a
             href="#home"

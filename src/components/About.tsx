@@ -11,11 +11,11 @@ const About = () => {
           <div></div>
         </div>
         <div className="max-w-[1000px] w-full grid sm:grid-cols-2 gap-8 px-4">
-          <div className="sm:text-right text-4xl font-bold">
+          <div className="text-center sm:text-right text-4xl font-bold">
             <p>Hi. I'm Oskar Kuchta, nice to meet you.</p>
           </div>
           <div>
-            <p>
+            <p className="text-center sm:text-left">
               I'm passionate about building excellent software that improves the
               lives of those around me. In my free time I also like to run and
               play chess.

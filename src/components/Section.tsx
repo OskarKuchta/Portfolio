@@ -4,12 +4,10 @@ import { useInView } from "react-intersection-observer";
 import { useSectionContext } from "../Hooks/useSectionContext";
 import { SectionAnimationResult, SectionProps } from "../Types";
 
-
-
 const useSectionAnimation = (): SectionAnimationResult => {
   const controls: AnimationControls = useAnimation();
   const [ref, inView] = useInView({
-    threshold: 0.3,
+    threshold: 0.2,
     delay: 0.3,
   });
 
