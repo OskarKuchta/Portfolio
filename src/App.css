@@ -36,5 +36,17 @@
 .projects-button-container:hover .projects-icon,
 .projects-button-container:focus .projects-icon {
   fill: black;
-  
+}
+
+.react-icon {
+  animation: spinner 2s linear infinite;
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

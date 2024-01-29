@@ -16,7 +16,7 @@ const Home = () => {
     return () => clearTimeout(timeoutId);
   }, []);
   return (
-    <div className="w-full pt-40 h-screen" id="home">
+    <div className="w-full pt-40 min-h-screen" id="home">
       <div className="max-w-[1000px] mx-auto px-8 flex flex-col justify-center">
         <p className="text-[#46E258]">Hi, my name is</p>
         <h1 className="text-4xl sm:text-7xl font-bold text-[#ccd6f6]">

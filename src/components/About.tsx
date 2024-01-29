@@ -1,3 +1,5 @@
+import react from "/react.png";
+
 const About = () => {
   return (
     <div className="w-full h-screen text-gray-300" id="about">
@@ -14,7 +16,11 @@ const About = () => {
           <div className="text-center sm:text-right text-4xl font-bold">
             <p>Hi. I'm Oskar Kuchta, nice to meet you.</p>
           </div>
-          <div>
+          <div className="flex flex-col-reverse sm:flex-col">
+            <img
+              src={react}
+              className="react-icon w-20 mt-12 sm:mt-[-140px] mx-auto mb-12"
+            />
             <p className="text-center sm:text-left">
               I'm passionate about building excellent software that improves the
               lives of those around me. In my free time I also like to run and
