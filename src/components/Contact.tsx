@@ -2,9 +2,10 @@ import { FormEvent, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { inputValue } from "../Types";
 
 const Contact = () => {
-  const [inputValues, setInputValues] = useState({
+  const [inputValues, setInputValues] = useState<inputValue>({
     email: "",
     message: "",
   });
@@ -77,7 +78,7 @@ const Contact = () => {
             setInputValues({ ...inputValues, message: e.target.value })
           }
         ></textarea>
-        <button className="text-white border-2 hover:bg-[#46E258] hover:border-[#46E258] px-4 py-3 my-8 mx-auto flex items-center outline-none rounded-sm focus:bg-[#46E258] focus:border-[#46E258]" >
+        <button className="text-white border-2 hover:bg-[#46E258] hover:border-[#46E258] px-4 py-3 my-8 mx-auto flex items-center outline-none rounded-sm focus:bg-[#46E258] focus:border-[#46E258]">
           Send message
         </button>
       </form>
