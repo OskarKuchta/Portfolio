@@ -90,3 +90,8 @@ export interface ProjectCardProps {
     liveHref: string;
     githubHref: string;
 }
+
+export interface inputValue {
+    email: string,
+    message: string
+}

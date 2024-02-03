@@ -2,7 +2,7 @@ import MobileNavbar from "./MobileNavbar";
 import { useSectionContext } from "../Hooks/useSectionContext";
 
 const Navbar = () => {
-  const linkClassName =
+  const linkClassName: string =
     "mx-2 px-4 py-1 hover:bg-[#46E258] hover:text-white focus:bg-[#46E258] focus:text-white focus:border-[#46E258] focus:outline-white duration-300 rounded-sm";
   const { currentSection } = useSectionContext();
 
