@@ -65,7 +65,7 @@ const projects: ProjectCardProps[] = [
   },
   {
     name: "Country Informator",
-    src: "https://github.com/OskarKuchta/Country-Infromator/blob/main/app/public/result1.png?raw=true",
+    src: "https://github.com/OskarKuchta/Country-Infromator/blob/main/public/result1.png?raw=true",
     alt: "Country Informator project photo",
     liveHref: "https://oskaprojects.ct8.pl/Country-Informator/dist/",
     githubHref: "https://github.com/OskarKuchta/Country-Infromator",
