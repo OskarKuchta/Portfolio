@@ -77,6 +77,13 @@ const projects: ProjectCardProps[] = [
     liveHref: "https://oskaprojects.ct8.pl/React-Quiz/dist/",
     githubHref: "https://github.com/OskarKuchta/React-Quiz",
   },
+  {
+    name: "Advice generator",
+    src: "https://github.com/OskarKuchta/Projects/blob/main/advice-generator/public/result2.jpg?raw=true",
+    alt: "Advice generator project photo",
+    liveHref: "https://generate-your-advice.netlify.app/",
+    githubHref: "https://github.com/OskarKuchta/Advice-generator",
+  },
 ];
 
 const Projects = () => {
