@@ -11,12 +11,14 @@ import Sass from "/sass.png";
 import Typescript from "/ts.png";
 import Redux from "/redux.png";
 import Router from "/router.png";
+import CSSModules from "/css-modules.svg";
 import { SkillsData } from "../Types";
 
 const skillsData: SkillsData[] = [
   { img: HTML, label: "HTML" },
   { img: CSS, label: "CSS" },
   { img: Sass, label: "SASS" },
+  { img: CSSModules, label: "CSS Modules" },
   { img: Tailwind, label: "TAILWIND" },
   { img: JavaScript, label: "JAVASCRIPT" },
   { img: Typescript, label: "TYPESCRIPT" },
